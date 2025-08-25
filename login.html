@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project G4RS - Vehicular Traffic Accidents in Baguio City</title>
+    <title>Project G4RS - Login</title>
+    
+    <!-- CSS FILES -->        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -12,26 +21,25 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            font-family: 'Montserrat', 'Open Sans', sans-serif;
+            background: linear-gradient(rgba(13, 44, 84, 0.9), rgba(13, 44, 84, 0.9)), url('images/hero-bg.jpg') center/cover fixed no-repeat;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            color: #333;
         }
 
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            max-width: 900px;
-            width: 100%;
-            min-height: 600px;
+        .login-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            max-width: 1000px;
+            width: 100%;
+            min-height: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
             animation: fadeIn 0.8s ease-out;
         }
 
@@ -41,76 +49,91 @@
         }
 
         .info-section {
-            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            background: linear-gradient(rgba(13, 44, 84, 0.95), rgba(13, 44, 84, 0.95)), url('images/businesswoman-using-tablet-analysis.jpg') center/cover no-repeat;
             color: white;
-            padding: 60px 40px;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
-            overflow: hidden;
         }
 
         .info-section::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s infinite linear;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 44, 84, 0.8);
+            z-index: 0;
         }
 
-        @keyframes float {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        .info-content {
+            position: relative;
+            z-index: 1;
         }
 
         .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #8bc34a;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            position: relative;
-            z-index: 1;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
+        .logo img {
+            height: 50px;
+            width: 40px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo-text span:first-child {
+            color: white;
+        }
+
+        .logo-text span:last-child {
+            color: #f69309;
+        }
+
+        .info-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .info-section p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         .features {
             list-style: none;
-            position: relative;
-            z-index: 1;
+            margin-top: 30px;
         }
 
         .features li {
             margin: 15px 0;
             display: flex;
             align-items: center;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .features li:hover {
-            opacity: 1;
+            font-size: 1rem;
         }
 
         .features li::before {
-            content: '📊';
+            content: '✓';
+            color: #f69309;
+            font-weight: bold;
             margin-right: 15px;
             font-size: 1.2rem;
         }
 
         .auth-section {
-            padding: 60px 40px;
+            background: white;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -119,7 +142,7 @@
         .auth-tabs {
             display: flex;
             margin-bottom: 30px;
-            border-radius: 25px;
+            border-radius: 8px;
             background: #f8f9fa;
             padding: 5px;
         }
@@ -129,17 +152,18 @@
             padding: 12px 20px;
             border: none;
             background: transparent;
-            border-radius: 20px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
             color: #666;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .tab-button.active {
-            background: #4caf50;
+            background: #f69309;
             color: white;
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 5px 15px rgba(246, 147, 9, 0.3);
         }
 
         .form-container {
@@ -169,42 +193,44 @@
             margin-bottom: 8px;
             color: #333;
             font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .form-input {
             width: 100%;
             padding: 15px 20px;
             border: 2px solid #e9ecef;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 16px;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.8);
+            font-family: 'Open Sans', sans-serif;
         }
 
         .form-input:focus {
             outline: none;
-            border-color: #4caf50;
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
-            transform: translateY(-2px);
+            border-color: #f69309;
+            box-shadow: 0 0 0 3px rgba(246, 147, 9, 0.1);
         }
 
         .submit-btn {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            background: #f69309;
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 10px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .submit-btn:hover {
+            background: #e48400;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 5px 15px rgba(246, 147, 9, 0.3);
         }
 
         .submit-btn:active {
@@ -223,38 +249,41 @@
         }
 
         .forgot-password a {
-            color: #4caf50;
+            color: #f69309;
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
             cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .forgot-password a:hover {
-            color: #388e3c;
+            color: #e48400;
             text-decoration: underline;
         }
 
         .error-message {
-            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            background: #e74c3c;
             color: white;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 8px;
             margin-bottom: 20px;
             text-align: center;
             display: none;
             animation: slideDown 0.5s ease-out;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .success-message {
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            background: #10b981;
             color: white;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 8px;
             margin-bottom: 20px;
             text-align: center;
             display: none;
             animation: slideDown 0.5s ease-out;
+            font-family: 'Open Sans', sans-serif;
         }
 
         @keyframes slideDown {
@@ -265,27 +294,27 @@
         .dashboard-container {
             display: none;
             min-height: 100vh;
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            background: #f8f9fa;
             padding: 20px;
         }
 
         .dashboard-header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: white;
+            border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .dashboard-title {
-            color: #1b5e20;
-            font-size: 1.8rem;
+            color: #0d2c54;
+            font-size: 1.5rem;
             font-weight: 700;
             margin: 0;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .user-info {
@@ -295,32 +324,34 @@
         }
 
         .user-name {
-            color: #1b5e20;
+            color: #0d2c54;
             font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .logout-btn {
             padding: 10px 20px;
-            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            background: #0d2c54;
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .logout-btn:hover {
+            background: #0a2342;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+            box-shadow: 0 5px 15px rgba(13, 44, 84, 0.3);
         }
 
         .powerbi-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: white;
+            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             min-height: 80vh;
         }
 
@@ -328,62 +359,12 @@
             width: 100%;
             height: 80vh;
             border: none;
-            border-radius: 10px;
-        }
-
-        .embed-instructions {
-            background: #f8f9fa;
-            border-left: 4px solid #4caf50;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .embed-instructions h3 {
-            color: #1b5e20;
-            margin-bottom: 15px;
-        }
-
-        .embed-instructions code {
-            background: #e9ecef;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-        }
-
-        .placeholder-dashboard {
-            text-align: center;
-            padding: 60px 20px;
-            color: #666;
-        }
-
-        .placeholder-dashboard h2 {
-            color: #1b5e20;
-            margin-bottom: 20px;
-        }
-
-        .demo-btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
-            color: white;
-            text-decoration: none;
             border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .demo-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
         }
 
         .loading-spinner {
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #4caf50;
+            border-top: 3px solid #f69309;
             border-radius: 50%;
             width: 20px;
             height: 20px;
@@ -398,48 +379,48 @@
         }
 
         @media (max-width: 768px) {
-            .container {
+            .login-container {
                 grid-template-columns: 1fr;
                 max-width: 400px;
             }
 
             .info-section {
-                padding: 40px 30px;
+                padding: 30px;
                 text-align: center;
+                display: none;
             }
 
             .auth-section {
-                padding: 40px 30px;
+                padding: 30px;
             }
 
             .logo {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .user-info {
-                flex-direction: column;
-                gap: 10px;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="login-container">
         <div class="info-section">
-            <h1 class="logo">G4RS</h1>
-            <p class="subtitle">Vehicular Traffic Accidents in Baguio City</p>
-            <ul class="features">
-                <li>Comprehensive accident data analysis</li>
-                <li>Real-time traffic monitoring</li>
-                <li>Interactive maps and visualizations</li>
-                <li>Detailed reporting system</li>
-                <li>2016-2025 historical data</li>
-                <li>Location-based insights</li>
-            </ul>
+            <div class="info-content">
+                <div class="logo">
+                    <img src="images/G4RS-LOGO.png" alt="G4RS Logo">
+                    <div class="logo-text">
+                        <span>PROJECT</span>
+                        <span>G4RS</span>
+                    </div>
+                </div>
+                <h2>Vehicular Traffic Accidents in Baguio City</h2>
+                <p>Access the comprehensive dashboard to analyze traffic accident data, identify high-risk areas, and contribute to making Baguio City roads safer for everyone.</p>
+                <ul class="features">
+                    <li>Comprehensive accident data analysis</li>
+                    <li>Interactive maps and visualizations</li>
+                    <li>Detailed reporting system</li>
+                    <li>2016-2025 historical data</li>
+                    <li>Location-based insights</li>
+                </ul>
+            </div>
         </div>
 
         <div class="auth-section">
@@ -520,7 +501,6 @@
 
     <script>
         // Firebase configuration
-        // REPLACE THESE WITH YOUR ACTUAL FIREBASE CONFIG VALUES
         const firebaseConfig = {
             apiKey: "AIzaSyB_AKMRJyhDC7wV7MP01KsBEvkI1Rg3DOM",
             authDomain: "g4rs-baguio-traffic.firebaseapp.com",
@@ -692,7 +672,7 @@
         }
 
         function showDashboard(user) {
-            document.querySelector('.container').style.display = 'none';
+            document.querySelector('.login-container').style.display = 'none';
             document.getElementById('dashboardContainer').style.display = 'block';
             
             // Update user display name
@@ -702,30 +682,11 @@
 
         function showAuthForm() {
             document.getElementById('dashboardContainer').style.display = 'none';
-            document.querySelector('.container').style.display = 'grid';
+            document.querySelector('.login-container').style.display = 'grid';
             
             // Reset forms
             document.querySelectorAll('form').forEach(form => form.reset());
             hideMessages();
-        }
-
-        function showSampleDashboard() {
-            const container = document.querySelector('.powerbi-container');
-            container.innerHTML = `
-                <div style="text-align: center; padding: 40px;">
-                    <h2 style="color: #1b5e20; margin-bottom: 20px;">Sample Dashboard View</h2>
-                    <p style="color: #666; margin-bottom: 30px;">This is where your Power BI report will be displayed.</p>
-                    <div style="background: #f8f9fa; border: 2px dashed #ddd; border-radius: 10px; padding: 60px; margin: 20px 0;">
-                        <h3 style="color: #999; margin-bottom: 15px;">📊 Your Power BI Report Goes Here</h3>
-                        <p style="color: #999;">Replace the iframe src with your Power BI embed URL</p>
-                    </div>
-                    <button onclick="resetPlaceholder()" class="demo-btn">Back to Instructions</button>
-                </div>
-            `;
-        }
-
-        function resetPlaceholder() {
-            location.reload();
         }
 
         // Utility functions
@@ -799,19 +760,5 @@
             });
         });
     </script>
-
-    <!-- Configuration Instructions -->
-    <div style="display: none;" id="firebase-config-instructions">
-        <h2>Firebase Setup Instructions</h2>
-        <p>To use this application, you need to set up Firebase:</p>
-        <ol>
-            <li>Go to <a href="https://console.firebase.google.com/">Firebase Console</a></li>
-            <li>Create a new project or select existing one</li>
-            <li>Enable Authentication with Email/Password</li>
-            <li>Enable Firestore Database</li>
-            <li>Get your config values from Project Settings</li>
-            <li>Replace the firebaseConfig object in the script</li>
-        </ol>
-    </div>
 </body>
 </html>
