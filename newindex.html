@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Project G4RS - Using GIS technology and data analytics to reduce road accidents in Baguio City">
+        <meta name="author" content="Project G4RS Team">
+
+        <title>Project G4RS - Road Safety Initiative in Baguio City</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/templatemo-topic-listing.css" rel="stylesheet">   
+        <link href="css/imagegallery.css" rel="stylesheet"> 
+        
+        <style>
+            /* Custom enhancements */
+            .navbar {
+                background-color: rgba(13, 44, 84, 0.95) !important;
+                padding: 10px 0;
+                transition: all 0.3s ease;
+            }
+            
+            .navbar.scrolled {
+                padding: 5px 0;
+                background-color: #0d2c54 !important;
+            }
+            
+            .hero-section {
+                background: linear-gradient(rgba(13, 44, 84, 0.7), rgba(13, 44, 84, 0.7)), url('images/hero-bg.jpg') center/cover no-repeat;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+            
+            .custom-btn {
+                background-color: #f69309;
+                border-color: #f69309;
+                color: white;
+                transition: all 0.3s;
+            }
+            
+            .custom-btn:hover {
+                background-color: #e48400;
+                border-color: #e48400;
+                transform: translateY(-2px);
+            }
+            
+            .news-container {
+                max-height: 240px;
+                overflow-y: auto;
+                padding-right: 10px;
+            }
+            
+            .news-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                padding: 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+            
+            .news-item:hover {
+                background-color: rgba(246, 147, 9, 0.1);
+            }
+            
+            .news-item img {
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+                margin-right: 15px;
+                border-radius: 5px;
+            }
+            
+            .news-item a {
+                color: #333;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+            
+            .news-item a:hover {
+                color: #f69309;
+            }
+            
+            .partner-logo {
+                height: 90px;
+                width: auto;
+                margin: 0 15px 15px 15px;
+                filter: grayscale(100%);
+                opacity: 0.8;
+                transition: all 0.3s;
+            }
+            
+            .partner-logo:hover {
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #f69309;
+                margin-bottom: 0;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+                color: #555;
+            }
+            
+            .section-title {
+                position: relative;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+            }
+            
+            .section-title:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background-color: #f69309;
+            }
+            
+            .section-title.text-center:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .feature-box {
+                padding: 30px;
+                border-radius: 10px;
+                background: white;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+                transition: all 0.3s;
+                height: 100%;
+            }
+            
+            .feature-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+                color: #f69309;
+                margin-bottom: 20px;
+            }
+            
+            .testimonial-card {
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+                margin: 15px;
+            }
+            
+            .testimonial-text {
+                position: relative;
+                padding: 20px;
+                font-style: italic;
+            }
+            
+            .testimonial-text:before {
+                content: '"';
+                font-size: 4rem;
+                color: rgba(246, 147, 9, 0.2);
+                position: absolute;
+                top: -10px;
+                left: 0;
+                line-height: 1;
+            }
+            
+            .cta-section {
+                background: linear-gradient(rgba(13, 44, 84, 0.9), rgba(13, 44, 84, 0.9)), url('images/cta-bg.jpg') center/cover fixed no-repeat;
+                padding: 80px 0;
+                color: white;
+            }
+            
+            footer {
+                background-color: #0d2c54;
+                color: white;
+                padding: 60px 0 30px;
+            }
+            
+            .footer-links a {
+                color: rgba(255,255,255,0.7);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            
+            .footer-links a:hover {
+                color: #f69309;
+            }
+            
+            .social-links a {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 50%;
+                text-align: center;
+                line-height: 40px;
+                color: white;
+                margin-right: 10px;
+                transition: all 0.3s;
+            }
+            
+            .social-links a:hover {
+                background: #f69309;
+                transform: translateY(-3px);
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .hero-title {
+                    font-size: 3rem !important;
+                }
+                
+                .news-item {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .news-item img {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+        </style>
+    </head>
+    
+    <body id="top">
+        <main>
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <div class="d-flex align-items-center">
+                            <img src="images/G4RS-LOGO.png" alt="G4RS Logo" style="height:50px;width:40px;">
+                            <div class="ms-2">
+                                <p class="mb-0" style="font-size:1.25rem;">
+                                    <span style="color: white;"><b>PROJECT</b></span>
+                                    <span style="color: orange;"><b>G4RS</b></span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section_1">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section_2">Maps & Data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section_3">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section_4">Road Safety</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section_5">Contact</a>
+                            </li>
+                        </ul>
+
+                        <div class="d-none d-lg-block">
+                            <a href="#section_5" class="btn custom-btn smoothscroll">Get Involved</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-12 mx-auto text-center">
+                            <h1 class="hero-title text-white" style="font-size: 4rem;">
+                                <span style="color: white;">PROJECT</span>
+                                <span style="color: orange;">G4RS</span>
+                            </h1>
+                            <h2 class="text-white mb-4">Geospatial Analytics for Road Safety</h2>
+                            <h5 class="text-center mb-5" style="font-size: 1.5rem;"><i>"Safer Roads Today, Stronger Communities Tomorrow."</i></h5>
+                            <div class="d-flex justify-content-center flex-wrap gap-3">
+                                <a href="#section_2" class="btn custom-btn btn-lg smoothscroll">View Accident Data</a>
+                                <a href="#section_5" class="btn btn-outline-light btn-lg smoothscroll">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 mx-auto text-center">
+                            <h2 class="section-title text-center">Making Baguio City Roads Safer</h2>
+                            <p class="lead">Project G4RS utilizes cutting-edge geospatial technology and data analytics to identify high-risk areas and implement targeted interventions for road safety.</p>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-3 col-6 text-center mb-4">
+                            <p class="stat-number" data-count="42">0</p>
+                            <p class="stat-label">Accident Reduction</p>
+                        </div>
+                        <div class="col-md-3 col-6 text-center mb-4">
+                            <p class="stat-number" data-count="150">0</p>
+                            <p class="stat-label">Hotspots Identified</p>
+                        </div>
+                        <div class="col-md-3 col-6 text-center mb-4">
+                            <p class="stat-number" data-count="5">0</p>
+                            <p class="stat-label">Years of Data</p>
+                        </div>
+                        <div class="col-md-3 col-6 text-center mb-4">
+                            <p class="stat-number" data-count="12">0</p>
+                            <p class="stat-label">Interventions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-section section-padding">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg h-100">
+                                <div class="d-flex align-items-center mb-3">
+                                    <h5 class="mb-0" style="color: #f69309;">BAGUIO CITY ROAD SAFETY NEWS</h5>
+                                </div>
+                                <div class="news-container">
+                                    <div class="news-item">
+                                        <img src="images/news/1.png" alt="News 1">
+                                        <a href="https://baguioheraldexpressonline.com/senior-citizen-dies-in-marcos-highway-road-crash/" target="_blank">Senior citizen dies in Marcos Highway Road crash</a>
+                                    </div>
+                                    <div class="news-item">
+                                        <img src="images/news/2.png" alt="News 2">
+                                        <a href="https://amiananbalitangayon.com/two-injured-in-three-baguio-city-road-accidents/" target="_blank">Two injured in three Baguio City Road Accidents</a>
+                                    </div>
+                                    <div class="news-item">
+                                        <img src="images/news/3.png" alt="News 3">
+                                        <a href="https://www.gmanetwork.com/regionaltv/news/108372/3-dead-as-van-rams-vehicles-in-baguio/story/" target="_blank">3 dead as van rams vehicles in Baguio</a>
+                                    </div>
+                                    <div class="news-item">
+                                        <img src="images/news/4.png" alt="News 4">
+                                        <a href="https://www.pna.gov.ph/articles/1254013" target="_blank">Baguio road accidents drop 26% after speed limit implementation</a>
+                                    </div>
+                                    <div class="news-item">
+                                        <img src="images/news/5.png" alt="News 5">
+                                        <a href="https://www.filipinonewssentinel.com/oplan-drive/" target="_blank">Oplan Drive</a>
+                                    </div>
+                                </div>
+                                <div class="mt-3 text-center">
+                                    <a href="news.html" class="btn custom-btn">More News</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-12 ms-lg-4">
+                            <div class="custom-block custom-block-overlay h-100">
+                                <div class="d-flex flex-column h-100">
+                                    <img src="images/businesswoman-using-tablet-analysis.jpg" class="custom-block-image img-fluid" alt="">
+                                    <div class="custom-block-overlay-text d-flex">
+                                        <div>
+                                            <h4 class="text-white mb-3">Our Vision</h4>
+                                            <p class="text-white">Project G4RS strives to create safer road networks that promote a healthier and more economically robust Baguio City. Through this initiative, we aim to reduce vehicular accidents and foster a culture of road safety across all road users.</p>
+                                            <h5 class="text-white mb-3">Partners and Stakeholders:</h5>
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <img src="images/UC-LOGO.png" alt="University of Cordilleras" class="partner-logo">
+                                                <img src="images/BCPO-LOGO.png" alt="BCPO" class="partner-logo">
+                                                <img src="images/Baguio-LGU Logo.png" alt="Baguio LGU" class="partner-logo">
+                                                <img src="images/DOST-Logo.png" alt="DOST" class="partner-logo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="explore-section section-padding bg-light" id="section_2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2 class="section-title text-center mb-5">Baguio City Vehicular Traffic Accidents Heatmap (2016-2025)</h2>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div class="ratio ratio-16x9">
+                                <iframe title="G4rs Guestview" src="https://app.powerbi.com/view?r=eyJrIjoiNzUyNDA2ZjMtN2JkYS00M2FlLWFjYjUtZjJjYTRmNzM3YzlhIiwidCI6ImE1MTVlN2M0LThjZjctNGY5Ny1iMjNiLTk2NDkxNjQ1ZjdmMCIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h3 class="mb-4">Vehicular Traffic Accidents Hotspots (2016-2025)</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery section remains the same as your original code -->
+                    <div class="col-12 text-center imagegallerybody">
+                        <div class="gallery-container">
+                            <!-- Your existing gallery code here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="timeline-section section-padding" id="section_3">
+                <div class="section-overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2 class="text-white mb-4">About Project <span style="color: #f69309;">G4RS</span></h2>
+                        </div>
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <div class="timeline-container">
+                                <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+                                    <div class="list-progress">
+                                        <div class="inner"></div>
+                                    </div>
+                                    <li>
+                                        <h4 class="text-white mb-3">About the Project</h4>
+                                        <p class="text-white">Project G4RS is an innovative initiative spearheaded by the <b>University of the Cordilleras</b> in collaboration with the <b>Baguio City Police Office (BCPO)</b> and the <b>Local Government Units (LGUs) of Baguio City</b>. Funded by the <b>Department of Science and Technology – Philippine Council for Industry, Energy and Emerging Technology Research and Development (DOST-PCIEERD)</b>, this project uses cutting-edge Geographic Information Systems (GIS) and data analytics to mitigate road accidents in Baguio City.</p>
+                                        <p class="text-white">The primary focus of Project G4RS is to analyze traffic accident data, identify accident-prone areas, and provide a decision-support platform for informed infrastructure planning and policymaking.</p>
+                                        <div class="icon-holder">
+                                            <i class="bi-search"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h4 class="text-white mb-3">Key Objectives</h4>
+                                        <p class="text-white"><span class="text-warning"><b>Accident Detection & Prevention:</b></span> Using GIS and data analytics to identify high-risk areas for traffic accidents.</p>
+                                        <p class="text-white"><span class="text-warning"><b>Data-Driven Decision Making:</b></span> Applying time-series and spatial analysis to assist in policy formation and city infrastructure planning.</p>
+                                        <p class="text-white"><span class="text-warning"><b>Road Safety Enhancement:</b></span> Aimed at reducing traffic-related accidents to improve public safety and promote sustainable urban mobility.</p>
+                                        <div class="icon-holder">
+                                            <i class="bi-bookmark"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h4 class="text-white mb-3">Our Approach</h4>
+                                        <p class="text-white">We combine historical accident data with real-time monitoring to identify patterns and predict potential accident hotspots. Our multi-faceted approach includes engineering improvements, public awareness campaigns, and policy recommendations.</p>
+                                        <p class="text-white">Through collaboration with local authorities and community stakeholders, we implement targeted interventions that have demonstrated measurable results in reducing accidents and saving lives.</p>
+                                        <div class="icon-holder">
+                                            <i class="bi-gear"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding" id="section_4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2 class="section-title text-center mb-5">Road Safety Initiatives</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="bi bi-geo-fill"></i>
+                                </div>
+                                <h4>Hotspot Identification</h4>
+                                <p>Using advanced GIS technology to pinpoint high-risk areas and prioritize interventions where they're needed most.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="bi bi-clipboard-data"></i>
+                                </div>
+                                <h4>Data Analysis</h4>
+                                <p>Comprehensive analysis of accident patterns, contributing factors, and temporal trends to inform safety measures.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="bi bi-megaphone"></i>
+                                </div>
+                                <h4>Public Awareness</h4>
+                                <p>Educational campaigns and community engagement programs to promote road safety awareness among all users.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="bi bi-lightbulb"></i>
+                                </div>
+                                <h4>Policy Recommendations</h4>
+                                <p>Evidence-based suggestions for policy improvements and infrastructure changes to enhance road safety.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="bi bi-graph-up"></i>
+                                </div>
+                                <h4>Impact Monitoring</h4>
+                                <p>Continuous evaluation of implemented measures to assess effectiveness and make data-driven adjustments.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h4>Stakeholder Collaboration</h4>
+                                <p>Working closely with government agencies, community leaders, and residents to implement comprehensive solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="text-white mb-4">Join Us in Making Baguio Roads Safer</h2>
+                            <p class="text-white mb-5">Together, we can reduce accidents and create a safer environment for all road users. Get involved in our initiatives or learn how to implement similar programs in your community.</p>
+                            <a href="#section_5" class="btn custom-btn btn-lg smoothscroll">Get Involved</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section section-padding section-bg" id="section_5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-12 text-center">
+                            <h2 class="mb-5">Get in Touch</h2>
+                        </div>
+                        <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                            <div class="google-map ratio ratio-16x9">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7653.404868502755!2d120.593611!3d16.411111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a168c9f4b5ab%3A0xbc1e343f3f51c3d0!2sBaguio%20City%2C%20Benguet!5e0!3m2!1sen!2sph!4v1651234567890!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12 mb-3 mb-lg-0 ms-auto">
+                            <h4 class="mb-3">Project Headquarters</h4>
+                            <p>University of the Cordilleras<br>Governor Pack Road, Baguio City<br>Benguet, Philippines</p>
+                            <hr>
+                            <p class="d-flex align-items-center mb-1">
+                                <span class="me-2"><i class="bi-telephone"></i></span>
+                                <a href="tel:+6374444333" class="site-footer-link">+63 74 444 3333</a>
+                            </p>
+                            <p class="d-flex align-items-center">
+                                <span class="me-2"><i class="bi-envelope"></i></span>
+                                <a href="mailto:info@projectg4rs.ph" class="site-footer-link">info@projectg4rs.ph</a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12 mx-auto">
+                            <h4 class="mb-3">Project Partners</h4>
+                            <p>Baguio City Police Office<br>Baguio City LGU<br>DOST-PCIEERD</p>
+                            <hr>
+                            <div class="social-links d-flex justify-content-start">
+                                <a href="#"><i class="bi-facebook"></i></a>
+                                <a href="#"><i class="bi-twitter"></i></a>
+                                <a href="#"><i class="bi-linkedin"></i></a>
+                                <a href="#"><i class="bi-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                        <div class="d-flex align-items-center">
+                            <img src="images/G4RS-LOGO.png" alt="G4RS Logo" style="height:50px;width:40px;">
+                            <div class="ms-2">
+                                <p class="mb-0" style="font-size:1.25rem;">
+                                    <span style="color: white;">PROJECT</span>
+                                    <span style="color: orange;">G4RS</span>
+                                </p>
+                                <p class="text-white-50 mb-0">Geospatial Analytics for Road Safety</p>
+                            </div>
+                        </div>
+                        <p class="text-white-50 mt-3">A collaborative initiative to make Baguio City roads safer through data-driven approaches and community engagement.</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <h6 class="site-footer-title mb-3">Resources</h6>
+                        <ul class="site-footer-links">
+                            <li><a href="#section_1" class="footer-links smoothscroll">Home</a></li>
+                            <li><a href="#section_2" class="footer-links smoothscroll">Data & Maps</a></li>
+                            <li><a href="#section_3" class="footer-links smoothscroll">About</a></li>
+                            <li><a href="#section_4" class="footer-links smoothscroll">Initiatives</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <h6 class="site-footer-title mb-3">Information</h6>
+                        <ul class="site-footer-links">
+                            <li><a href="#" class="footer-links">Research Papers</a></li>
+                            <li><a href="#" class="footer-links">Annual Reports</a></li>
+                            <li><a href="#" class="footer-links">Safety Tips</a></li>
+                            <li><a href="#" class="footer-links">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12 mt-4 mt-lg-0">
+                        <h6 class="site-footer-title mb-3">Newsletter</h6>
+                        <p class="text-white-50">Subscribe to our newsletter for updates on road safety initiatives and reports.</p>
+                        <form class="d-flex">
+                            <input type="email" class="form-control me-2" placeholder="Your email">
+                            <button type="submit" class="btn custom-btn">Subscribe</button>
+                        </form>
+                        <p class="copyright-text mt-4">Copyright © 2023 Project G4RS. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/imagegallery.js"></script>
+        
+        <script>
+            $(document).ready(function() {
+                // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+            
+            // Counter animation
+            function animateCounter() {
+                $('.stat-number').each(function() {
+                    $(this).prop('Counter', 0).animate({
+                        Counter: $(this).data('count')
+                    }, {
+                        duration: 2000,
+                        easing: 'swing',
+                        step: function(now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+                });
+            }
+            
+            // Initialize counter when in viewport
+            function initCounter() {
+                const counterSection = $('.bg-light');
+                const counterPosition = counterSection.offset().top;
+                const screenPosition = $(window).scrollTop() + $(window).height();
+                
+                if (screenPosition > counterPosition) {
+                    animateCounter();
+                    $(window).off('scroll', initCounter);
+                }
+            }
+            
+            $(window).scroll(initCounter);
+            initCounter(); // Check on load
+            
+            // Smooth scrolling for navigation links
+            $('a.smoothscroll').on('click', function(e) {
+                e.preventDefault();
+                var target = this.hash;
+                var $target = $(target);
+                $('html, body').animate({
+                    'scrollTop': $target.offset().top - 70
+                }, 800, 'swing');
+            });
+            });
+        </script>
+    </body>
+</html>
